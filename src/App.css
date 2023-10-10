@@ -1,0 +1,142 @@
+/* body {
+}
+
+header {
+  margin: 25px;
+}
+h2 {
+  padding: 0 0 5px;
+}
+h3 {
+  margin-top: 10px;
+  padding-left: 50px;
+} */
+
+th {
+  margin: 0 10px;
+}
+
+tbody tr td {
+  text-align: center;
+  border: solid 1px rgb(233, 233, 233);
+}
+
+tr th + td {
+  /* background-color: aqua; */
+  text-align: start;
+  padding: 0 10px;
+}
+
+td input {
+  border: solid #0ea5e9 2px;
+  border-radius: 4px;
+  width: 100%;
+  margin-left: -10px;
+}
+td input:hover {
+  border: solid #0284c7 2px;
+  border-radius: 4px;
+}
+td input:focus {
+  outline: #075985 1px;
+  border-radius: 4px;
+}
+td:nth-child(5) {
+  text-transform: capitalize;
+}
+td button {
+  text-transform: capitalize;
+}
+
+/* @media (max-width: 360px) {
+    tr th + td {
+      display: flex;
+    }
+  
+    td input {
+      border: solid #0ea5e9 2px;
+      padding: 0 10px;
+      border-radius: 4px;
+      flex-grow: 1;
+      margin: 0 -10px;
+    }
+  } */
+
+/* Responsive */
+@media screen and (max-width: 640px) {
+  /* table {
+      border: 0;
+    }
+  
+    table caption {
+      font-size: 1.3em;
+    }
+  
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+  
+    table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: 0.625em;
+    }
+  
+    table td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: 0.8em;
+      text-align: right;
+    } */
+
+  table td::before {
+    /*   
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    width: 90px;
+  }
+
+  tr th + td::before {
+    /* float: none; */
+    display: block;
+  }
+  tr td:last-child::before {
+    width: 0px;
+  }
+  /*  */
+  thead tr {
+    display: none;
+  }
+  tbody tr {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 3px solid #ddd;
+    margin-bottom: 0.625em;
+  }
+  tbody tr td {
+    text-align: start;
+    padding: 0 10px;
+    margin: 1px 0;
+    border: 1px solid white;
+    border-top: 3px solid #ddd;
+  }
+  td input {
+    margin-left: 0px;
+  }
+}
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
